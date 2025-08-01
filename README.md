@@ -113,11 +113,3 @@ The analysis generates several output files in the `data/processed/` directory:
 - Economic crises and policy changes also affect price dynamics
 - Statistical tests confirm the significance of event impacts on oil prices
 
-
-## Contact
-
-For questions or support, contact the Birhan Energies Data Science Team.
-
----
-
-**Note**: This analysis is for educational and research purposes. Investment decisions should be based on comprehensive analysis and professional advice.
