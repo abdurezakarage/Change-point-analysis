@@ -1,4 +1,4 @@
-# Brent Oil Price Analysis - Birhan Energies
+# Brent Oil Price Analysis
 
 ## Project Overview
 
