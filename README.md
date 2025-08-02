@@ -15,7 +15,6 @@ Change-point-analysis/
 ├── 📊 data/                    # Data storage and management
 │   ├── raw/                   # Original, unprocessed data files
 │   ├── processed/             # Cleaned and processed datasets
-│   └── outputs/               # Analysis results and visualizations
 ├── 📓 notebooks/              # Jupyter notebooks for analysis
 │   ├── changePoint.ipynb      # Change point detection analysis
 │   ├── price_analyzer.ipynb   # Comprehensive price analysis
