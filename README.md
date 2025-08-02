@@ -34,7 +34,6 @@ Change-point-analysis/
 #### Data Directory (`data/`)
 - **`raw/`**: Contains the original Brent oil price dataset and any external data sources
 - **`processed/`**: Stores cleaned, transformed, and feature-engineered datasets ready for analysis
-- **`outputs/`**: Houses analysis results, visualizations, and generated reports
 
 #### Notebooks Directory (`notebooks/`)
 - **`changePoint.ipynb`**: Comprehensive change point detection analysis using the ruptures library
