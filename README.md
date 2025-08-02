@@ -126,13 +126,6 @@ Change point models identify structural breaks in time series data where the und
 - **Outputs**: Dates of structural changes, new parameter values, confidence intervals
 - **Limitations**: Cannot prove causation, may miss gradual changes
 
-#### Statistical Methods Used
-- **Augmented Dickey-Fuller Test**: Tests for stationarity
-- **Linear Regression**: Analyzes trends and correlations
-- **Autocorrelation Analysis**: Identifies volatility clustering
-- **T-Tests**: Validates statistical significance of event impacts
-- **Peak Detection**: Alternative method for change point identification
-
 ### 3. Assumptions and Limitations
 
 #### Key Assumptions
