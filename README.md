@@ -4,6 +4,69 @@
 
 This project analyzes how important geopolitical and economic events affect Brent oil prices. The analysis focuses on identifying structural changes in oil price dynamics and correlating them with major events such as political decisions, conflicts in oil-producing regions, global economic sanctions, and OPEC policy changes.
 
+## Project Organization
+
+This repository follows a well-structured organization to ensure clarity, maintainability, and reproducibility of the analysis:
+
+### 📁 Folder Structure
+
+```
+Change-point-analysis/
+├── 📊 data/                    # Data storage and management
+│   ├── raw/                   # Original, unprocessed data files
+│   ├── processed/             # Cleaned and processed datasets
+│   └── outputs/               # Analysis results and visualizations
+├── 📓 notebooks/              # Jupyter notebooks for analysis
+│   ├── changePoint.ipynb      # Change point detection analysis
+│   ├── price_analyzer.ipynb   # Comprehensive price analysis
+│   └── __init__.py           # Python package initialization
+├── 🔧 src/                    # Source code and utilities
+│   ├── changePoint.py        # Change point detection functions
+│   ├── price_analyzer.py     # Price analysis utilities
+│   └── __init__.py           # Python package initialization
+├── 🐍 venv/                   # Python virtual environment
+├── 📋 requirements.txt        # Python dependencies
+└── 📖 README.md              # Project documentation
+```
+
+### 📋 File Descriptions
+
+#### Data Directory (`data/`)
+- **`raw/`**: Contains the original Brent oil price dataset and any external data sources
+- **`processed/`**: Stores cleaned, transformed, and feature-engineered datasets ready for analysis
+- **`outputs/`**: Houses analysis results, visualizations, and generated reports
+
+#### Notebooks Directory (`notebooks/`)
+- **`changePoint.ipynb`**: Comprehensive change point detection analysis using the ruptures library
+- **`price_analyzer.ipynb`**: Detailed price analysis including time series properties and event correlation
+- **`__init__.py`**: Enables notebooks directory as a Python package
+
+#### Source Code Directory (`src/`)
+- **`changePoint.py`**: Modular functions for change point detection algorithms
+- **`price_analyzer.py`**: Utility functions for data preprocessing, analysis, and visualization
+- **`__init__.py`**: Package initialization for importing modules
+
+#### Configuration Files
+- **`requirements.txt`**: Lists all Python dependencies with specific versions for reproducibility
+- **`README.md`**: Comprehensive project documentation (this file)
+
+### 🔄 Workflow Organization
+
+The project follows a logical workflow:
+
+1. **Data Ingestion** → `data/raw/` → Original datasets
+2. **Data Processing** → `src/` → Clean and transform data
+3. **Analysis** → `notebooks/` → Interactive analysis and exploration
+4. **Results** → `data/outputs/` → Generated insights and visualizations
+5. **Documentation** → `docs/` → Reports and findings
+
+### 🛠️ Development Setup
+
+1. **Environment**: Use the provided `venv/` virtual environment
+2. **Dependencies**: Install via `pip install -r requirements.txt`
+3. **Analysis**: Run notebooks in order: `price_analyzer.ipynb` → `changePoint.ipynb`
+4. **Reproducibility**: All analysis steps are documented and version-controlled
+
 ## Business Objective
 
 The main goal is to provide clear insights that help investors, analysts, and policymakers understand and react to oil price changes better. This analysis supports:
