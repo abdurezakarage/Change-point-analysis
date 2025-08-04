@@ -1,115 +1,232 @@
-# Brent Oil Price Analysis - Birhan Energies
+# Brent Oil Analysis Dashboard
 
-## Project Overview
+A comprehensive interactive dashboard for analyzing Brent oil price trends and correlations with historical events. This project combines advanced data analysis with an intuitive web interface to help stakeholders understand how various events affect oil prices.
 
-This project analyzes how important geopolitical and economic events affect Brent oil prices. The analysis focuses on identifying structural changes in oil price dynamics and correlating them with major events such as political decisions, conflicts in oil-producing regions, global economic sanctions, and OPEC policy changes.
+## 🚀 Features
 
-## Business Objective
+### Backend (Flask)
+- **RESTful API** with comprehensive endpoints for data analysis
+- **Real-time data processing** with pandas and numpy
+- **Advanced analytics** including volatility analysis, correlation analysis, and change point detection
+- **CORS support** for seamless frontend integration
+- **Error handling** and data validation
 
-The main goal is to provide clear insights that help investors, analysts, and policymakers understand and react to oil price changes better. This analysis supports:
+### Frontend (Next.js)
+- **Interactive visualizations** using Recharts
+- **Responsive design** with Tailwind CSS
+- **Real-time data filtering** and date range selection
+- **Event timeline** with impact analysis
+- **Change point detection** visualization
+- **Correlation analysis** charts and tables
 
-- **Investment Strategy Development**: Understanding price volatility patterns and event impacts
-- **Risk Management**: Identifying periods of high volatility and structural changes
-- **Policy Development**: Informing energy security and economic stability strategies
-- **Operational Planning**: Helping energy companies adapt to market conditions
+### Key Analytics Features
+- **Historical Price Trends** with interactive charts
+- **Volatility Analysis** with 30-day rolling windows
+- **Event Impact Analysis** showing price changes around key events
+- **Change Point Detection** identifying structural breaks in price data
+- **Correlation Analysis** between events and price movements
+- **Comprehensive Filtering** by date ranges and event types
 
-## Data
+## 📊 Dashboard Components
 
-The dataset contains historical Brent oil prices from May 20, 1987, to September 30, 2022, with daily price observations in USD per barrel.
+1. **Price Trend Analysis** - Interactive line charts showing historical price movements
+2. **Volatility Analysis** - Rolling volatility calculations and event impact visualization
+3. **Events Timeline** - Chronological display of key events with impact indicators
+4. **Change Points Analysis** - Detection and visualization of structural breaks
+5. **Event Impact Analysis** - Correlation between events and price changes
+6. **Filter Panel** - Date range and event type filtering capabilities
 
-### Data Fields
-- **Date**: Date of the recorded Brent oil price (format: day-month-year)
-- **Price**: Brent oil price in USD per barrel
+## 🛠️ Technology Stack
 
-## Analysis Workflow
+### Backend
+- **Flask** - Web framework
+- **Pandas** - Data manipulation and analysis
+- **NumPy** - Numerical computations
+- **Flask-CORS** - Cross-origin resource sharing
 
-### 1. Data Analysis Workflow
+### Frontend
+- **Next.js 15** - React framework
+- **React 18** - UI library
+- **Recharts** - Charting library
+- **Tailwind CSS** - Styling framework
+- **Lucide React** - Icon library
+- **Axios** - HTTP client
 
-The analysis follows a structured approach:
+## 📁 Project Structure
 
-1. **Data Loading and Preprocessing**
-   - Load historical Brent oil price data
-   - Convert dates and calculate derived features
-   - Handle missing values and outliers
+```
+Change-point-analysis/
+├── data/
+│   ├── processed/
+│   │   ├── processed_brent_oil_data.csv
+│   │   ├── event_dataset.csv
+│   │   └── analysis_results.json
+│   └── raw/
+├── src/
+│   ├── app/
+│   │   ├── app.py                 # Flask application
+│   │   └── routes/
+│   │       └── analysis.py        # API endpoints
+│   └── Dashboared/
+│       └── brent_oil_dashboared/  # Next.js frontend
+│           ├── app/
+│           │   ├── page.tsx       # Main dashboard
+│           │   ├── layout.tsx     # App layout
+│           │   └── components/    # React components
+│           │       ├── PriceChart.tsx
+│           │       ├── VolatilityChart.tsx
+│           │       ├── EventsTimeline.tsx
+│           │       ├── CorrelationAnalysis.tsx
+│           │       ├── ChangePointsAnalysis.tsx
+│           │       ├── FilterPanel.tsx
+│           │       └── LoadingSpinner.tsx
+│           ├── package.json
+│           └── next.config.ts
+├── requirements.txt
+└── README.md
+```
 
-2. **Time Series Properties Analysis**
-   - Stationarity testing (Augmented Dickey-Fuller test)
-   - Trend analysis (linear and exponential)
-   - Seasonality analysis (monthly and weekly patterns)
-   - Volatility clustering analysis
+## 🚀 Getting Started
 
-3. **Change Point Detection**
-   - Use ruptures library for structural break detection
-   - Alternative peak detection method for validation
-   - Analyze change point characteristics and intervals
+### Prerequisites
+- Python 3.8+
+- Node.js 18+
+- npm or yarn
 
-4. **Event Correlation Analysis**
-   - Compile major geopolitical and economic events
-   - Analyze price impacts around event dates
-   - Statistical testing of event significance
-   - Match change points with nearby events
+### Backend Setup
 
-5. **Insights Generation**
-   - Executive summary for stakeholders
-   - Key findings and risk assessment
-   - Recommendations for different stakeholder groups
-   - Documentation of limitations and assumptions
+1. **Navigate to the project directory:**
+   ```bash
+   cd Change-point-analysis
+   ```
 
-### 2. Key Concepts and Models
+2. **Create and activate virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-#### Change Point Models
-Change point models identify structural breaks in time series data where the underlying parameters (mean, variance, trend) change significantly. In the context of oil prices:
+3. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **Purpose**: Detect when oil price dynamics fundamentally change
-- **Applications**: Identify regime changes, policy impacts, market structure shifts
-- **Outputs**: Dates of structural changes, new parameter values, confidence intervals
-- **Limitations**: Cannot prove causation, may miss gradual changes
+4. **Start the Flask backend:**
+   ```bash
+   cd src/app
+   python app.py
+   ```
+   The backend will be available at `http://localhost:5000`
 
-#### Statistical Methods Used
-- **Augmented Dickey-Fuller Test**: Tests for stationarity
-- **Linear Regression**: Analyzes trends and correlations
-- **Autocorrelation Analysis**: Identifies volatility clustering
-- **T-Tests**: Validates statistical significance of event impacts
-- **Peak Detection**: Alternative method for change point identification
+### Frontend Setup
 
-### 3. Assumptions and Limitations
+1. **Navigate to the frontend directory:**
+   ```bash
+   cd src/Dashboared/brent_oil_dashboared
+   ```
 
-#### Key Assumptions
-1. **Event Selection**: Major geopolitical and economic events significantly impact oil prices
-2. **Time Window**: 30-day windows around events capture relevant price impacts
-3. **Structural Changes**: Detected change points represent meaningful regime shifts
-4. **Historical Patterns**: Past behavior provides insights for future planning
+2. **Install dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
 
-#### Important Limitations
-1. **Correlation vs. Causation**: Statistical correlation does not prove causal relationships
-2. **Event Completeness**: Event selection is subjective and may miss important events
-3. **Market Evolution**: Historical patterns may not predict future behavior
-4. **Benchmark Specificity**: Analysis focuses on Brent oil prices specifically
-5. **Time Series Assumptions**: Assumes past patterns continue into the future
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The frontend will be available at `http://localhost:3000`
 
-## Output Files
+## 📡 API Endpoints
 
-The analysis generates several output files in the `data/processed/` directory:
+### Core Endpoints
+- `GET /api/analysis/dashboard-summary` - Comprehensive dashboard summary
+- `GET /api/analysis/historical-data` - Historical price data with filtering
+- `GET /api/analysis/events` - Events data with filtering
+- `GET /api/analysis/volatility-analysis` - Volatility calculations and analysis
+- `GET /api/analysis/correlation-analysis` - Event-price correlation analysis
+- `GET /api/analysis/change-points` - Change point detection results
+- `GET /api/analysis/forecast` - Forecasting data (if available)
 
-- **processed_brent_oil_data.csv**: Preprocessed price data with derived features
-- **event_dataset.csv**: Compiled major events dataset
-- **change_points.csv**: Detected structural change points
-- **analysis_results.json**: Complete analysis results in JSON format
+### Query Parameters
+- `start_date` - Filter data from this date (YYYY-MM-DD)
+- `end_date` - Filter data until this date (YYYY-MM-DD)
+- `event_type` - Filter by specific event type
 
-## Key Findings
+## 🎯 Key Features
 
-### Time Series Properties
-- Brent oil prices exhibit non-stationary behavior with persistent trends
-- Significant volatility clustering indicates periods of high and low volatility
-- Price movements show autocorrelation in squared returns (GARCH effects)
+### Interactive Visualizations
+- **Price Trend Charts** - Real-time price data with zoom and pan capabilities
+- **Volatility Analysis** - Rolling volatility with event impact overlays
+- **Event Timeline** - Chronological event display with impact indicators
+- **Correlation Charts** - Bar charts and scatter plots showing event impacts
+- **Change Point Visualization** - Structural break detection and analysis
 
-### Change Point Analysis
-- Multiple structural breaks detected over the 35-year period
-- Change points often coincide with major geopolitical or economic events
-- Average intervals between change points provide insights into market stability
+### Data Filtering
+- **Date Range Selection** - Filter data by specific time periods
+- **Event Type Filtering** - Focus on specific types of events
+- **Real-time Updates** - Charts update automatically with filter changes
+
+### Responsive Design
+- **Mobile-friendly** - Optimized for tablets and mobile devices
+- **Desktop Optimized** - Full-featured experience on larger screens
+- **Cross-browser Compatible** - Works on all modern browsers
+
+## 📈 Analytics Capabilities
+
+### Price Analysis
+- Historical price trends and patterns
+- Price change calculations (1d, 1w, 1m)
+- Statistical summaries (min, max, average, current)
+
+### Volatility Analysis
+- 30-day rolling volatility calculations
+- Pre/post event volatility comparisons
+- Volatility trend visualization
 
 ### Event Impact Analysis
-- Geopolitical events, particularly in oil-producing regions, show significant price impacts
-- Economic crises and policy changes also affect price dynamics
-- Statistical tests confirm the significance of event impacts on oil prices
+- Price change calculations around events
+- Impact magnitude ranking
+- Correlation analysis between events and price movements
 
+### Change Point Detection
+- Structural break identification
+- Confidence level calculations
+- Segment analysis and trend identification
+
+## 🔧 Configuration
+
+### Environment Variables
+- `PORT` - Backend port (default: 5000)
+- `FLASK_DEBUG` - Debug mode (default: True)
+
+### Data Sources
+The dashboard expects the following data files in `data/processed/`:
+- `processed_brent_oil_data.csv` - Historical Brent oil price data
+- `event_dataset.csv` - Events dataset with dates and descriptions
+- `analysis_results.json` - Pre-computed analysis results
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Brent oil price data sources
+- Event dataset contributors
+- Open-source libraries and frameworks used in this project
+
+## 📞 Support
+
+For support and questions, please open an issue in the repository or contact the development team.
+
+---
+
+**Note:** Make sure both the Flask backend and Next.js frontend are running simultaneously for the dashboard to function properly.
